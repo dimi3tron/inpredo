@@ -1,16 +1,16 @@
 import os
 import numpy as np
-#os.environ["KERAS_BACKEND"] = "plaidml.keras.backend"
 
-from keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
-from keras.models import Sequential, load_model
+from tensorflow.keras.preprocessing.image import ImageDataGenerator, load_img, img_to_array
+from tensorflow.keras.models import Sequential, load_model
 
 
 img_width, img_height = 150, 150
 model_path = '../src/models/model.h5'
-weights_path = '../src/models/weights'
+weights_path = '../src/models/weights.h5'
 model = load_model(model_path)
-test_path = '../data/validation'
+test_path = '../../thirdparty/inpredo/data/validation'
+data_path = '../../thirdparty/inpredo/data'
 
 def predict(file):
   x = load_img(file, target_size=(img_width,img_height))
